@@ -34,7 +34,6 @@ The PSP Syscon reports the headphone connection state to the system.
 
 On the affected hardware, this state has inverted polarity:
 
-```text
 Physical: headphones disconnected
 Syscon:   1
 
