@@ -10,7 +10,7 @@
 PSP_MODULE_INFO("SpeakerFixGame", PSP_MODULE_KERNEL, 1, 0);
 PSP_MAIN_THREAD_ATTR(0);
 
-#define LOG_FILE "ms0:/seplugins/speakerfix_game.log"
+#define LOG_FILE "ms0:/seplugins/jacksensefix.log"
 
 #define SYSCON_GET_HP_NID     0xE0DDFE18
 #define SYSCON_SET_HP_CB_NID  0x672B79E8
