@@ -1,4 +1,4 @@
-# JackSenseFix for PSP
+# headPhoneFix for PSP
 
 A PSP plugin that fixes **inverted headphone jack detection**.
 
@@ -8,9 +8,9 @@ A PSP plugin that fixes **inverted headphone jack detection**.
 
 ## English
 
-### What is JackSenseFix?
+### What is headPhoneFix?
 
-**JackSenseFix** is a system plugin for the Sony PlayStation Portable
+**headPhoneFix** is a system plugin for the Sony PlayStation Portable
 designed to work around a hardware fault where the headphone jack
 detection signal has inverted polarity.
 
@@ -25,7 +25,7 @@ This causes inverted audio routing: without headphones the internal
 speakers are muted, while connecting headphones can enable the speakers
 instead.
 
-JackSenseFix corrects this detection polarity in software.
+headPhoneFix corrects this detection polarity in software.
 
 ### How it works
 
@@ -39,7 +39,7 @@ Physical: headphones connected
 Syscon:   0
 ```
 
-JackSenseFix dynamically locates the Syscon/HPRM structures and
+headPhoneFix dynamically locates the Syscon/HPRM structures and
 headphone callback used by the currently loaded firmware environment.
 
 The plugin:
@@ -59,17 +59,17 @@ environments.
 
 ### Installation
 
-Copy `jacksensefix.prx` to:
+Copy `headPhoneFix.prx` to:
 
 ``` text
-ms0:/seplugins/jacksensefix.prx
+ms0:/seplugins/headPhoneFix.prx
 ```
 
 Add to `ms0:/seplugins/PLUGINS.TXT`:
 
 ``` text
-vsh, ms0:/seplugins/jacksensefix.prx, 1
-game, ms0:/seplugins/jacksensefix.prx, 1
+vsh, ms0:/seplugins/headPhoneFix.prx, 1
+game, ms0:/seplugins/headPhoneFix.prx, 1
 ```
 
 Then fully restart the PSP.
@@ -105,7 +105,7 @@ experimental.
 
 ### Important
 
-JackSenseFix targets a **specific hardware fault: inverted headphone
+headPhoneFix targets a **specific hardware fault: inverted headphone
 jack detection polarity**.
 
 It is **not** a manual speaker/headphone switch, audio booster, volume
@@ -119,14 +119,14 @@ If the PSP fails to boot after enabling the plugin:
 2.  Hold **START**.
 3.  Turn the PSP on while continuing to hold START.
 4.  ARK-4 should boot with plugins disabled.
-5.  Remove or disable JackSenseFix in `PLUGINS.TXT`.
+5.  Remove or disable headPhoneFix in `PLUGINS.TXT`.
 
 ### Technical overview
 
 The fault occurs below the normal application audio layer: the physical
 headphone-detect state reported through Syscon has reversed polarity.
 
-JackSenseFix does not patch individual games or redirect audio streams.
+headPhoneFix does not patch individual games or redirect audio streams.
 It corrects the headphone-detection state used by the PSP system.
 
 At startup in each environment, the plugin discovers the active Syscon
@@ -141,9 +141,9 @@ plugin binary to operate in both XMB and games.
 
 ## Русский
 
-### Что такое JackSenseFix?
+### Что такое headPhoneFix?
 
-**JackSenseFix** --- системный плагин для Sony PlayStation Portable,
+**headPhoneFix** --- системный плагин для Sony PlayStation Portable,
 предназначенный для программного обхода аппаратной неисправности, при
 которой сигнал определения подключения наушников имеет обратную
 полярность.
@@ -159,7 +159,7 @@ plugin binary to operate in both XMB and games.
 наушников встроенные динамики отключаются, а подключение наушников
 может, наоборот, включать динамики.
 
-JackSenseFix программно исправляет полярность сигнала определения
+headPhoneFix программно исправляет полярность сигнала определения
 наушников.
 
 ### Как это работает
@@ -174,7 +174,7 @@ Syscon:    1
 Syscon:    0
 ```
 
-JackSenseFix динамически находит используемые текущим окружением
+headPhoneFix динамически находит используемые текущим окружением
 структуры Syscon/HPRM и callback определения наушников.
 
 Плагин:
@@ -194,17 +194,17 @@ JackSenseFix динамически находит используемые те
 
 ### Установка
 
-Скопируйте `jacksensefix.prx` в:
+Скопируйте `headPhoneFix.prx` в:
 
 ``` text
-ms0:/seplugins/jacksensefix.prx
+ms0:/seplugins/headPhoneFix.prx
 ```
 
 Добавьте в `ms0:/seplugins/PLUGINS.TXT`:
 
 ``` text
-vsh, ms0:/seplugins/jacksensefix.prx, 1
-game, ms0:/seplugins/jacksensefix.prx, 1
+vsh, ms0:/seplugins/headPhoneFix.prx, 1
+game, ms0:/seplugins/headPhoneFix.prx, 1
 ```
 
 После этого полностью перезагрузите PSP.
@@ -241,7 +241,7 @@ game, ms0:/seplugins/jacksensefix.prx, 1
 
 ### Важно
 
-JackSenseFix предназначен для обхода **конкретной аппаратной
+headPhoneFix предназначен для обхода **конкретной аппаратной
 неисправности --- инвертированной полярности сигнала определения
 наушников**.
 
@@ -257,7 +257,7 @@ JackSenseFix предназначен для обхода **конкретной
 2.  Зажмите **START**.
 3.  Не отпуская START, включите PSP.
 4.  ARK-4 должен загрузиться с отключёнными плагинами.
-5.  Удалите или отключите JackSenseFix в `PLUGINS.TXT`.
+5.  Удалите или отключите headPhoneFix в `PLUGINS.TXT`.
 
 ### Технически вкратце
 
@@ -265,7 +265,7 @@ JackSenseFix предназначен для обхода **конкретной
 состояние headphone-detect, получаемое через Syscon, имеет обратную
 полярность.
 
-JackSenseFix не патчит отдельные игры и не перенаправляет аудиопотоки.
+headPhoneFix не патчит отдельные игры и не перенаправляет аудиопотоки.
 Вместо этого он исправляет состояние определения наушников, которым
 пользуется сама система PSP.
 
